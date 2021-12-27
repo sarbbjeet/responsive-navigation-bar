@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@500&display=swap");
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Baloo 2", cursive;
+}
+
+:root {
+    --main-nav-color: #2a5d84;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+header {
+    background-color: var(--main-nav-color);
+    width: 100%;
+    height: 10vh;
+    color: white;
+}
+
+.logo h6 {
+    margin: 0;
+    font-size: 1.3em;
+}
+
+.custom-header {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav {
+    /* min-width: 40vw; */
+    display: flex;
+    align-items: center;
+    height: 100%;
+    /* justify-content: space-around; */
+}
+
+nav ul {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 15px 20px;
+    cursor: pointer;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li:hover {
+    background: #1e4d729d;
+    color: white;
+    /* background-color: tomato; */
+}
+
+nav ul li a:hover {
+    color: white;
+}
+
+.search input {
+    outline: none;
+    border: none;
+    width: 12vw;
+    padding: 5px;
+}
+
+.search {
+    margin-left: 5px;
+}
+
+.search button {
+    padding: 5px;
+    margin-left: -5px;
+    outline: none;
+    border: none;
+    background-color: #6fa355;
+    border-color: #537840;
+    color: white;
+}
+
+.search-icon {
+    display: none;
+}
+
+.search button:hover {
+    background-color: #5e8949;
+}
+
+.side-menu {
+    display: none;
+}
+
+.side-menu-hide {
+    display: none;
+}
+
+.side-nav-active {
+    right: 0;
+}
+
+.magic-search-deactive {
+    right: 0;
+}
+
+main {
+    height: 90vh;
+    width: 100vw;
+}
+
+.active {
+    background-color: #1e4d729d;
+}
+
+@media screen and (max-width: 700px) {
+    .side-menu {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        z-index: 20;
+        top: 45px;
+        right: -100%;
+        height: calc(100vh- 8vh);
+        background-color: var(--main-nav-color);
+        width: 100%;
+        transition: right 0.5s;
+        justify-content: center;
+    }
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+    .search {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .search {
+        position: absolute;
+        text-align: center;
+        z-index: 2;
+        top: 7vh;
+        right: 0px;
+        width: 40%;
+        height: 9vh;
+        background-color: var(--main-nav-color);
+        /* display: none; */
+    }
+    .search input {
+        width: 70%;
+    }
+    .search input,
+    button {
+        position: relative;
+        top: 12px;
+    }
+}
